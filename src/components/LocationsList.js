@@ -1,5 +1,6 @@
 import React, { useEffect, useState } from "react";
 import { Card } from 'semantic-ui-react';
+import axios from 'axios';
 
 const items = [
     {
@@ -11,6 +12,17 @@ const items = [
 ]
 
 export default function LocationsList() {
+    useEffect(() => {
+        axios
+            .get('https://rickandmortyapi.com/api/location/')
+            .then(res => {
+                console.log(res.data.results);
+            })
+            .catch(err => {
+                console.log(err);
+            })
+    }, []);
+
     return (
     <Card.Group items={items} />
     )
