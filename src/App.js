@@ -10,7 +10,8 @@ export default function App() {
   return (
     <main>
       <Header />
-      <CharacterList />
+      {/* <CharacterList /> */}
+      {/* <LocationsList /> */}
       {/* <TabNav /> */}
     </main>
   );
