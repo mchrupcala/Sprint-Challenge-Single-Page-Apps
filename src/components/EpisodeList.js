@@ -1,25 +1,18 @@
 import React, { useEffect, useState } from "react";
 import { Card } from 'semantic-ui-react';
 import axios from 'axios';
-
-
-
-
-const items = [
-    {
-      header: 'Project Report - April',
-      description:
-        'Leverage agile frameworks to provide a robust synopsis for high level overviews.',
-      meta: 'ROI: 30%',
-    },
-]
+import EpisodeCard from './EpisodeCard';
 
 export default function EpisodeList() {
+    const [episodeList, setEpisodeList] = useState([]);
+
     useEffect(() => {
         axios
             .get('https://rickandmortyapi.com/api/episode/')
             .then(res => {
-                console.log(res.data.results);
+                const episodesData = res.data.results;
+                console.log(episodesData);
+                setEpisodeList(episodesData)
             })
             .catch(err => {
                 console.log(err);
@@ -27,6 +20,13 @@ export default function EpisodeList() {
     }, []);
 
     return (
-        <Card.Group items={items} />
-        )
+    <div>
+        {episodeList.map(item => {
+            return (
+                <EpisodeCard data={item} />
+            )
+            })}
+        
+    </div>
+   )
 }

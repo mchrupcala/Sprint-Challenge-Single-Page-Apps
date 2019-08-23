@@ -12,9 +12,9 @@ export default function App() {
     <main>
       <Header />
       <WelcomePage />
-      <CharacterList />
+      {/* <CharacterList /> */}
       {/* <LocationsList /> */}
-      {/* <EpisodeList /> */}
+      <EpisodeList />
       {/* <TabNav /> */}
     </main>
   );

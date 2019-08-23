@@ -1,22 +1,18 @@
 import React, { useEffect, useState } from "react";
 import { Card } from 'semantic-ui-react';
 import axios from 'axios';
-
-const items = [
-    {
-      header: 'Project Report - April',
-      description:
-        'Leverage agile frameworks to provide a robust synopsis for high level overviews.',
-      meta: 'ROI: 30%',
-    },
-]
+import LocationCard from './LocationCard';
 
 export default function LocationsList() {
+    const [placesList, setPlacesList] = useState([]);
+
     useEffect(() => {
         axios
             .get('https://rickandmortyapi.com/api/location/')
             .then(res => {
-                console.log(res.data.results);
+                const placesData = res.data.results;
+                console.log(placesData);
+                setPlacesList(placesData)
             })
             .catch(err => {
                 console.log(err);
@@ -24,6 +20,13 @@ export default function LocationsList() {
     }, []);
 
     return (
-    <Card.Group items={items} />
+        <div>
+        {placesList.map(item => {
+            return (
+                <LocationCard data={item} />
+            )
+          })}
+
+        </div>
     )
 }

@@ -35,15 +35,10 @@ export default function CharacterList() {
 
       {charList.map(item => {
         return (
-          <Card
-          image={item.image}
-          header={item.name}
-          meta={item.location.name}
-          description={item.species}
-        />
+          <CharacterCard data={item}/>
         )
       })}
-      
+
     </section>
   );
 }

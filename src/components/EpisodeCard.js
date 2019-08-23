@@ -1,14 +1,14 @@
 import React from "react";
 
-export default function EpisodeCard({ name, type, dimension, residents }) {
+export default function EpisodeCard(props) {
     return (
-        <div class="ui cards">
-          <div class="ui card">
-            <div class="content">
-              <div class="header">Project Report - April</div>
-              <div class="meta">ROI: 30%</div>
-              <div class="description">
-                Leverage agile frameworks to provide a robust synopsis for high level overviews.
+        <div className="ui cards">
+          <div className="ui card">
+            <div className="content">
+              <div className="header">{props.data.name}</div>
+              <div className="meta">{props.data.episode}</div>
+              <div className="description">
+                    {props.data.air_date}
               </div>
             </div>
           </div>
