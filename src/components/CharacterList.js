@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from "react";
 import CharacterCard from './CharacterCard';
-import { Card, Icon } from 'semantic-ui-react';
+import { Card, Icon, Tab } from 'semantic-ui-react';
 import axios from 'axios';
 
 export default function CharacterList() {
@@ -13,7 +13,7 @@ export default function CharacterList() {
           .get('https://rickandmortyapi.com/api/character/')
           .then(res => {
             const charData = res.data.results;
-              console.log(charData);
+              // console.log(charData);
               setCharList(charData)
           })
           .catch(err => {
@@ -22,12 +22,6 @@ export default function CharacterList() {
   }, []);
     //  Important: verify the 2nd `useEffect` parameter: the dependancies array!
 
-  const extra = (
-    <a>
-      <Icon name='user' />
-      16 Friends
-    </a>
-  )
 
   return (
     <section className="character-list grid-view">

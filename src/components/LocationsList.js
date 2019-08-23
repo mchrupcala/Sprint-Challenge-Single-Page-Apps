@@ -11,7 +11,7 @@ export default function LocationsList() {
             .get('https://rickandmortyapi.com/api/location/')
             .then(res => {
                 const placesData = res.data.results;
-                console.log(placesData);
+                // console.log(placesData);
                 setPlacesList(placesData)
             })
             .catch(err => {

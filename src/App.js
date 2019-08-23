@@ -1,5 +1,6 @@
 import React from "react";
-// import TabNav from "./components/TabNav.js";
+import {Route, NavLink} from 'react-router-dom';
+import TabNav from "./components/TabNav.js";
 import Header from "./components/Header.js";
 import WelcomePage from "./components/WelcomePage";
 import CharacterList from "./components/CharacterList";
@@ -12,10 +13,14 @@ export default function App() {
     <main>
       <Header />
       <WelcomePage />
-      {/* <CharacterList /> */}
-      {/* <LocationsList /> */}
+      <TabNav />
+      <CharacterList />
+      <LocationsList />
       <EpisodeList />
-      {/* <TabNav /> */}
+
+    <Route path="/CharacterList" component={CharacterList} />
+    <Route path="/LocationsList" component={LocationsList} />
+    <Route path="/EpisodeList" component={EpisodeList} />
     </main>
   );
 }
