@@ -8,28 +8,34 @@ import EpisodeList from "./EpisodeList";
 // TODO: Add missing tabs below
 // Take a look at React Semantic UI tabs 
 // https://react.semantic-ui.com/modules/tab/
+
+const panes = [
+    { menuItem: 'Characters', render: () => <Tab.Pane><CharacterList /></Tab.Pane> },
+    { menuItem: 'Locations', render: () => <Tab.Pane><LocationsList /></Tab.Pane> },
+    { menuItem: 'Episodes', render: () => <Tab.Pane><EpisodeList /></Tab.Pane> },
+  ]
+
 export default function TabNav() {
 
-    const panes = [
-        { menuItem: 'Characters', render: () => <Tab.Pane>Characters</Tab.Pane> },
-        { menuItem: 'Locations', render: () => <Tab.Pane>Locations</Tab.Pane> },
-        { menuItem: 'Episodes', render: () => <Tab.Pane>Tab 3 Content</Tab.Pane> },
-      ]
 
     return (
+        
     <div>
-        <div className="ui attached tabular menu">
-        <Link className="active item" to={"./CharacterList"}>Characters</Link>
-        <Link className="item" to={"./LocationsList"}>Locations</Link>
-        <Link className="item" to={"./EpisodeList"}>Episodes</Link>
+        <Tab panes={panes} />
+        {/* <div className="ui attached tabular menu"> */}
+        
+        {/* <Link className=" item" to={"./LocationsList"}>Locations</Link>
+        <Link className="item" to={"./EpisodeList"}>Episodes</Link> */}
+        {/* </div> */}
+
+        {/* <div className="ui bottom attached segment active tab"> */}
+            {/* <CharacterList /> */}
+            {/* </div>
+
+
+        <div className="ui bottom attached segment active tab">
+            <LocationsList />
         </div>
-
-        {/* <div className="ui bottom attached segment active tab">
-            Characters
-            </div>
-
-
-        <div className="ui bottom attached segment active tab">Locations</div>
         <div className="ui bottom attached segment active tab">Episodes</div> */}
     </div>
     )

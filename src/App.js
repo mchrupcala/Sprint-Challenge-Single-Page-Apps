@@ -14,11 +14,11 @@ export default function App() {
       <Header />
       <WelcomePage />
       <TabNav />
-      <CharacterList />
-      <LocationsList />
-      <EpisodeList />
+      {/* <CharacterList /> */}
+      {/* <LocationsList /> */}
+      {/* <EpisodeList /> */}
 
-    <Route path="/CharacterList" component={CharacterList} />
+    {/* <Route path="/CharacterList" component={CharacterList} /> */}
     <Route path="/LocationsList" component={LocationsList} />
     <Route path="/EpisodeList" component={EpisodeList} />
     </main>
