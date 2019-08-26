@@ -26,10 +26,17 @@ Demonstrate your understanding of this Sprint's concepts by answering the follow
 
 - [ ] Explain benefit(s) using `client-side routing`?
 > Answer:
+      	- So, so much faster.
+	      - Load everything from the outset, so the user doesn’t wait when they’re switching between pages.
+	      - Everything that's stored in state gets saved inside of the browser’s memory. Not something that I need to access via a server. 
+
 - [ ] What does AJAX stand for?
 > Answer:
+      Asynchronous JavaScript & XML. It has to do with a webpage requesting data from a server in the background while the page is being rendered.
+
 - [ ] What are `controlled components` in React?
 > Answer:
+      	- Typically, child components that are dictated by the state of their parent component. For example an input field receives the user’s input…if that gets stored in state, then the child component’s directing what ends up in the parent. Should be the other way around- which we can accomplish by storing the data in state, and using a prop for the value instead.
 
 
 ## Project Set Up
